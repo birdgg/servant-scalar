@@ -1,0 +1,6 @@
+packages:
+    .
+    example/
+
+-- GHC 9.14 ships base-4.22 which many packages have not yet bumped to.
+allow-newer: all:base, all:template-haskell, all:ghc-prim, all:text

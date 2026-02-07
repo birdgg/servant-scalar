@@ -1,0 +1,44 @@
+cabal-version:      3.0
+name:               servant-scalar
+version:            0.1.0.0
+synopsis:           Scalar API documentation UI for Servant
+description:
+    Serves a Scalar (https://scalar.com) API reference page alongside
+    your Servant API.  The UI is loaded from a CDN so the library adds
+    no embedded static files to your binary.
+license:            MIT
+license-file:       LICENSE
+author:             birdgg
+maintainer:         birdeggegg@gmail.com
+category:           Web, Servant
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:
+        Servant.Scalar
+        Servant.Scalar.Config
+        Servant.Scalar.Html
+        Servant.Scalar.Server
+    build-depends:
+        base         >= 4.18  && < 5
+      , aeson        >= 2.0   && < 3
+      , blaze-html   >= 0.9   && < 1
+      , blaze-markup >= 0.8   && < 1
+      , servant-blaze >= 0.9  && < 1
+      , network-uri  >= 2.6   && < 3
+      , openapi3     >= 3.2   && < 4
+      , servant      >= 0.20  && < 1
+      , servant-server >= 0.20 && < 1
+      , text         >= 1.2   && < 3
+    hs-source-dirs:   src
+    default-language: GHC2021
+    default-extensions:
+        DataKinds
+        LambdaCase
+        OverloadedStrings
+        TypeOperators

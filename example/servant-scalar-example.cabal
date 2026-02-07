@@ -1,0 +1,29 @@
+cabal-version:      3.0
+name:               servant-scalar-example
+version:            0.1.0.0
+build-type:         Simple
+
+executable servant-scalar-example
+    ghc-options:      -Wall -threaded
+    main-is:          Main.hs
+    build-depends:
+        base         >= 4.18 && < 5
+      , aeson
+      , aeson-pretty
+      , bytestring
+      , lens
+      , openapi3
+      , servant
+      , servant-openapi3
+      , servant-server
+      , servant-scalar
+      , text
+      , time
+      , warp >= 3.3 && < 4
+    default-language: GHC2021
+    default-extensions:
+        DataKinds
+        DeriveGeneric
+        GeneralizedNewtypeDeriving
+        OverloadedStrings
+        TypeOperators
